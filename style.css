@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Cascadia";
-  src: url(/CascadiaMono.woff2);
+  src: url("CascadiaMono.woff2");
 }
 
 #text::-webkit-scrollbar {
@@ -54,7 +54,7 @@ button {
   padding-bottom: 0.7em;
   text-align: right;
   cursor: default;
-  font-family: "Cascadia";
+  font-family: "Cascadia", 'Courier New', Courier, monospace;
   overflow-x: scroll;
 }
 
