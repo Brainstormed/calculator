@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/3fb28c15d1.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Calculator</title>
   </head>
   <body>
@@ -16,8 +20,11 @@
       browser which supprts JavaScript or turn it on in your settings</noscript
     >
     <div id="text"></div>
+    <div id="ans"></div>
     <div id="row-1">
-      <button id="del" class="symbol del" aria-label="Delete a number">&times;</button>
+      <button id="del" class="symbol del" aria-label="Delete a number">
+        <i class="fa-solid fa-delete-left"></i>
+      </button>
       <button id="c" class="num">C</button>
       <button id="ce" class="num">CE</button>
       <button id="percent" class="num">%</button>
