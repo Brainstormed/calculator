@@ -1,4 +1,3 @@
-const screen = document.getElementById("screen");
 const btn11 = document.getElementById("11");
 const btn12 = document.getElementById("12");
 const btn13 = document.getElementById("13");
@@ -23,3 +22,41 @@ const btn61 = document.getElementById("61");
 const btn62 = document.getElementById("62");
 const btn63 = document.getElementById("63");
 const btn64 = document.getElementById("64");
+
+let numpad = document.querySelectorAll(".numpad");
+
+let screen = document.getElementById("screen");
+
+function buttonClick() {
+  btn31.addEventListener("click", () => (screen.textContent += 7));
+  btn32.addEventListener("click", () => (screen.textContent += 8));
+  btn33.addEventListener("click", () => (screen.textContent += 9));
+
+  btn41.addEventListener("click", () => (screen.textContent += 4));
+  btn42.addEventListener("click", () => (screen.textContent += 5));
+  btn43.addEventListener("click", () => (screen.textContent += 6));
+
+  btn51.addEventListener("click", () => (screen.textContent += 1));
+  btn52.addEventListener("click", () => (screen.textContent += 2));
+  btn53.addEventListener("click", () => (screen.textContent += 3));
+
+  btn62.addEventListener("click", () => (screen.textContent += 0));
+
+  btn12.addEventListener("click", () => (screen.textContent = 0));
+  btn13.addEventListener("click", () => (screen.textContent = 0));
+}
+
+function del() {
+  screen.textContent = screen.textContent.substring(0, screen.textContent - 1);
+}
+
+if (screen.textContent === "0") {
+  for (let i = 0; i < numpad.length; i++) {
+    numpad[i].addEventListener("click", () => del());
+  }
+  setTimeout(() => {
+    buttonClick();
+  }, 1);
+} else {
+  buttonClick();
+}

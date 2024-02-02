@@ -1,65 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kurale&display=swap");
 
 html {
-    background-color: #1d1d1d;
+  background-color: #1d1d1d;
 }
 
 body {
-    color: white;
-    font-family: Poppins, sans-serif;
-    margin: auto;
-    margin-top: 15vh;
+  color: white;
+  font-family: Poppins, sans-serif;
+  margin: auto;
+  margin-top: 15vh;
 }
 
 div {
-    border: #747474 1px solid;
+  border: #747474 1px solid;
 }
 
 .cols {
-    background-color: #4b4b4b;
-    height: 1.5em;
-    width: 1.5em;
-    display: inline;
-    font-size: 3em;
-    grid-row: 1;
-    text-align: center;
-    border-radius: 0.2em;
-    margin-top: 0.15em;
-    user-select: none;
-    box-shadow: #555555 0.1em 0.1em 0.1em;
+  background-color: #4b4b4b;
+  height: 1.5em;
+  width: 1.5em;
+  display: inline;
+  font-size: 3em;
+  grid-row: 1;
+  text-align: center;
+  border-radius: 0.2em;
+  margin-top: 0.15em;
+  user-select: none;
+  box-shadow: #555555 0.1em 0.1em 0.1em;
 }
 
 .cols:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
-.cols:active{
-    box-shadow: #555555 0.05em 0.05em 0.1em;
-    transform: scale(0.98);
+.cols:active {
+  box-shadow: #555555 0.05em 0.05em 0.1em;
+  transform: scale(0.98);
 }
 
 .row {
-    display: grid;
-    border: none;
+  display: grid;
+  border: none;
 }
 
 #calc-keys {
-    width: 20em;
-    margin: auto;
-    border: none;
+  width: 20em;
+  margin: auto;
+  border: none;
 }
 
 #screen {
-    height: 3.33em;
-    background-color: #4b4b4b;
-    width: 6.35em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 0.5em;
-    border-radius: 0.4em;
-    box-shadow: #424242 0.1em 0.1em 0.1em;
-    font-size: 3em;
-    text-align: end;
-    padding-right: 0.1em;
+  height: 3.33em;
+  background-color: #4b4b4b;
+  width: 6.35em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 0.5em;
+  border-radius: 0.4em;
+  box-shadow: #424242 0.1em 0.1em 0.1em;
+  font-size: 3em;
+  text-align: end;
+  padding-right: 0.1em;
+  overflow: auto;
 }
