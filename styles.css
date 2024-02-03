@@ -8,7 +8,7 @@ body {
   color: white;
   font-family: Poppins, sans-serif;
   margin: auto;
-  margin-top: 15vh;
+  margin-top: 0.5em;
 }
 
 div {
@@ -63,4 +63,18 @@ div {
   text-align: end;
   padding-right: 0.1em;
   overflow: auto;
+  user-select: none;
+  word-break: break-all;
+}
+
+#error {
+  font-size: 2em;
+  height: 4em;
+  width: 9em;
+  margin: auto;
+  opacity: 1;
+  transform: translateY(-5em);
+  border-radius: 0.2em;
+  box-shadow: #424242 0.1em 0.1em 0.1em;
+  background-color: #747474;
 }
