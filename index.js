@@ -19,6 +19,18 @@ function numClick(i) {
   screen.textContent += numpad[i].textContent;
 }
 
+function errorDialog() {
+  error.style.transition = "opacity 0.1s, transform 0.1s";
+  error.style.transform = "translateY(0)";
+  error.style.opacity = 1;
+  error.textContent = "Cannot divide by zero";
+  setTimeout(() => {
+    error.style.transition = "opacity 0.1s, transform 0.1s";
+    error.style.opacity = 0;
+    error.style.transform = "translateY(-5em)";
+  }, 2000);
+}
+
 for (let i = 0; i < numpad.length; i++) {
   numpad[i].addEventListener("click", () => {
     if (screen.textContent != "0") {
@@ -56,15 +68,7 @@ btn[4].addEventListener("click", () => {
   if (screen.textContent != 0) {
     screen.textContent = 1 / screen.textContent;
   } else {
-    error.style.transition = "opacity 0.1s, transform 0.1s";
-    error.style.transform = "translateY(0)";
-    error.style.opacity = 1;
-    error.textContent = "Cannot divide by zero";
-    setTimeout(() => {
-      error.style.transition = "opacity 0.1s, transform 0.1s";
-      error.style.opacity = 0;
-      error.style.transform = "translateY(-5em)";
-    }, 2000);
+    errorDialog();
   }
 });
 
@@ -122,5 +126,9 @@ btn[19].addEventListener("click", () => {
 });
 
 btn[23].addEventListener("click", () => {
-  screen.textContent = eval(screen.textContent)
-})
+  screen.textContent = eval(screen.textContent);
+  if (screen.textContent == "NaN" || screen.textContent == "Infinity") {
+    errorDialog();
+    screen.textContent = "0";
+  }
+});
