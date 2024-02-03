@@ -69,9 +69,58 @@ btn[4].addEventListener("click", () => {
 });
 
 btn[5].addEventListener("click", () => {
-  screen.textContent *= screen.textContent
-})
+  screen.textContent *= screen.textContent;
+});
 
 btn[6].addEventListener("click", () => {
-  screen.textContent = Math.pow(screen.textContent, 1/2)
+  screen.textContent = Math.pow(screen.textContent, 1 / 2);
+});
+
+btn[7].addEventListener("click", () => {
+  if (
+    screen.textContent[screen.textContent.length - 1] != "." &&
+    !screen.textContent.includes("/")
+  ) {
+    screen.textContent += "/";
+  }
+});
+
+btn[0].addEventListener("click", () => {
+  if (
+    screen.textContent[screen.textContent.length - 1] != "." &&
+    !screen.textContent.includes("%")
+  ) {
+    screen.textContent += "%";
+  }
+});
+
+btn[11].addEventListener("click", () => {
+  if (
+    screen.textContent[screen.textContent.length - 1] != "." &&
+    !screen.textContent.includes("*")
+  ) {
+    screen.textContent += "*";
+  }
+});
+
+btn[15].addEventListener("click", () => {
+  if (
+    screen.textContent[screen.textContent.length - 1] != "." &&
+    !screen.textContent.includes("-")
+  ) {
+    screen.textContent += "-";
+  }
+});
+
+btn[19].addEventListener("click", () => {
+  if (
+    screen.textContent[screen.textContent.length - 1] != "." &&
+    !screen.textContent.includes("/")
+  ) {
+    screen.textContent += "+";
+  }
+});
+
+btn[23].addEventListener("click", () => {
+  screen.textContent = eval(screen.textContent)
 })
