@@ -99,28 +99,19 @@ btn[0].addEventListener("click", () => {
 });
 
 btn[11].addEventListener("click", () => {
-  if (
-    screen.textContent[screen.textContent.length - 1] != "." &&
-    !screen.textContent.includes("*")
-  ) {
+  if (screen.textContent[screen.textContent.length - 1] != ".") {
     screen.textContent += "*";
   }
 });
 
 btn[15].addEventListener("click", () => {
-  if (
-    screen.textContent[screen.textContent.length - 1] != "." &&
-    !screen.textContent.includes("-")
-  ) {
+  if (screen.textContent[screen.textContent.length - 1] != ".") {
     screen.textContent += "-";
   }
 });
 
 btn[19].addEventListener("click", () => {
-  if (
-    screen.textContent[screen.textContent.length - 1] != "." &&
-    !screen.textContent.includes("/")
-  ) {
+  if (screen.textContent[screen.textContent.length - 1] != ".") {
     screen.textContent += "+";
   }
 });
