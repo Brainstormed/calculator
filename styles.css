@@ -109,3 +109,8 @@ div {
   scale: 0.96;
   box-shadow: #6b652b 0.1em 0.1em 0.05em;
 }
+
+#del {
+  background-color: #fa4949;
+  box-shadow: 0.1em 0.1em 0.05em #fa4949;
+}

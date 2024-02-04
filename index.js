@@ -8,7 +8,7 @@ let toggleDark = document.getElementById("toggle-dark");
 let html = document.querySelector("html");
 let dark = true;
 let decimalPresent = false;
-let decimalPoint = document.getElementById("63");
+let decimalPoint = document.getElementById("decimal");
 let screen = document.getElementById("screen");
 
 // Functions
@@ -204,5 +204,3 @@ toggleDark.addEventListener("click", () => {
   }
   dark = !dark;
 });
-btn[3].style.backgroundColor = "#fa4949";
-btn[3].style.boxShadow = "0.1em 0.1em 0.05em red";
