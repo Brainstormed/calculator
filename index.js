@@ -185,7 +185,7 @@ toggleDark.addEventListener("click", () => {
     screen.style.backgroundColor = "#4b4b4b";
     screen.style.color = "#ffffff";
     error.style.backgroundColor = "#747474";
-    toggleDark.innerHTML = '<img src="light_mode.svg">';
+    toggleDark.innerHTML = '<img src="assets/light_mode.svg">';
     toggleDark.style.backgroundColor = "#e9e76e";
     html.style.transition = "all 0.5s";
   }
@@ -198,7 +198,7 @@ toggleDark.addEventListener("click", () => {
     screen.style.backgroundColor = "#f7fbff";
     screen.style.color = "#000000";
     error.style.backgroundColor = "#d6d6d6";
-    toggleDark.innerHTML = '<img src="dark_mode.svg">';
+    toggleDark.innerHTML = '<img src="assets/dark_mode.svg">';
     toggleDark.style.backgroundColor = "#24237c";
     html.style.transition = "all 0.5s";
   }
