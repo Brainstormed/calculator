@@ -1,11 +1,17 @@
+// Variable Declarations
+
 let numpad = document.querySelectorAll(".numpad");
 let clearScreen = document.querySelectorAll(".clear");
 let error = document.getElementById("error");
 let btn = document.querySelectorAll(".cols");
-
+let toggleDark = document.getElementById("toggle-dark");
+let html = document.querySelector("html");
+let dark = true;
+let decimalPresent = false;
 let decimalPoint = document.getElementById("63");
-
 let screen = document.getElementById("screen");
+
+// Functions
 
 function del() {
   screen.textContent = screen.textContent.slice(0, -1);
@@ -17,6 +23,12 @@ function clear() {
 
 function numClick(i) {
   screen.textContent += numpad[i].textContent;
+}
+
+function btnColor(color) {
+  for (let i = 0; i < btn.length; i++) {
+    btn[i].style.backgroundColor = color;
+  }
 }
 
 function errorDialog() {
@@ -31,6 +43,8 @@ function errorDialog() {
   }, 2000);
 }
 
+// Enter numbers in the calculator
+
 for (let i = 0; i < numpad.length; i++) {
   numpad[i].addEventListener("click", () => {
     if (screen.textContent != "0") {
@@ -42,9 +56,13 @@ for (let i = 0; i < numpad.length; i++) {
   });
 }
 
+// Clear the screen
+
 for (let i = 0; i < clearScreen.length; i++) {
   clearScreen[i].addEventListener("click", () => clear());
 }
+
+// Delete key
 
 btn[3].addEventListener("click", () => {
   if (screen.textContent.length > 1) {
@@ -54,37 +72,54 @@ btn[3].addEventListener("click", () => {
   }
 });
 
+// Enter decimal point
+
 decimalPoint.addEventListener("click", () => {
-  if (!screen.textContent.includes(".")) {
+  if (!decimalPresent) {
     screen.textContent += ".";
+    decimalPresent = true;
   }
 });
+
+// The plus minus key
 
 btn[20].addEventListener("click", () => {
   screen.textContent *= -1;
 });
 
+// Reciprocal, square and square root functions
+
 btn[4].addEventListener("click", () => {
-  if (
-    screen.textContent != "0" &&
-    !screen.textContent[screen.textContent.length - 1 in "/*-+"]
-  ) {
+  if (screen.textContent != "0" && !isNaN(screen.textContent)) {
     screen.textContent = 1 / screen.textContent;
+  } else if (isNaN(screen.textContent)) {
+    ("");
   } else {
     errorDialog();
   }
 });
 
 btn[5].addEventListener("click", () => {
-  !screen.textContent[screen.textContent.length - 1 in "/*-+"]
-    ? (screen.textContent *= screen.textContent)
-    : "";
+  if (!isNaN(screen.textContent)) screen.textContent *= screen.textContent;
 });
 
 btn[6].addEventListener("click", () => {
-  !screen.textContent[screen.textContent.length - 1 in "/*-+"]
-    ? (screen.textContent = Math.pow(screen.textContent, 1 / 2))
-    : "";
+  if (!isNaN(screen.textContent)) {
+    screen.textContent = Math.pow(screen.textContent, 1 / 2);
+  }
+});
+
+// Modulus, division, multiplication, suntraction and addition
+// operators
+
+btn[0].addEventListener("click", () => {
+  if (
+    screen.textContent[screen.textContent.length - 1] != "." &&
+    !screen.textContent.includes("%")
+  ) {
+    screen.textContent += "%";
+    decimalPresent = false;
+  }
 });
 
 btn[7].addEventListener("click", () => {
@@ -93,15 +128,7 @@ btn[7].addEventListener("click", () => {
     !screen.textContent.includes("/")
   ) {
     screen.textContent += "/";
-  }
-});
-
-btn[0].addEventListener("click", () => {
-  if (
-    screen.textContent[screen.textContent.length - 1] != "." &&
-    !screen.textContent.includes("%")
-  ) {
-    screen.textContent += "%";
+    decimalPresent = false;
   }
 });
 
@@ -111,6 +138,7 @@ btn[11].addEventListener("click", () => {
     screen.textContent[screen.textContent.length - 1] != "*"
   ) {
     screen.textContent += "*";
+    decimalPresent = false;
   }
 });
 
@@ -120,6 +148,7 @@ btn[15].addEventListener("click", () => {
     screen.textContent[screen.textContent.length - 1] != "-"
   ) {
     screen.textContent += "-";
+    decimalPresent = false;
   }
 });
 
@@ -132,10 +161,47 @@ btn[19].addEventListener("click", () => {
   }
 });
 
+// Evaluate the answer
+
 btn[23].addEventListener("click", () => {
   screen.textContent = eval(screen.textContent);
   if (screen.textContent == "NaN" || screen.textContent == "Infinity") {
     errorDialog();
     screen.textContent = "0";
+    decimalPresent = false;
   }
 });
+
+// Dark mode and light mode styles
+
+toggleDark.addEventListener("click", () => {
+  if (!dark) {
+    html.style.backgroundColor = "#1d1d1d";
+    html.style.color = "#ffffff";
+    btnColor("#4b4b4b");
+    btn[3].style.backgroundColor = "#fa4949";
+    btn[3].style.boxShadow = "0.1em 0.1em 0.05em #fa4949";
+    screen.style.backgroundColor = "#4b4b4b";
+    screen.style.color = "#ffffff";
+    error.style.backgroundColor = "#747474";
+    toggleDark.innerHTML = '<img src="light_mode.svg">';
+    toggleDark.style.backgroundColor = "#e9e76e";
+    html.style.transition = "all 0.5s";
+  }
+  if (dark) {
+    html.style.backgroundColor = "#e0e0e0";
+    html.style.color = "#000000";
+    btnColor("#f7fbff");
+    btn[3].style.backgroundColor = "#fa4949";
+    btn[3].style.boxShadow = "0.1em 0.1em 0.05em #fa4949";
+    screen.style.backgroundColor = "#f7fbff";
+    screen.style.color = "#000000";
+    error.style.backgroundColor = "#d6d6d6";
+    toggleDark.innerHTML = '<img src="dark_mode.svg">';
+    toggleDark.style.backgroundColor = "#24237c";
+    html.style.transition = "all 0.5s";
+  }
+  dark = !dark;
+});
+btn[3].style.backgroundColor = "#fa4949";
+btn[3].style.boxShadow = "0.1em 0.1em 0.05em red";

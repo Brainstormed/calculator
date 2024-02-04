@@ -3,10 +3,10 @@
 
 html {
   background-color: #1d1d1d;
+  color: #ffffff;
 }
 
 body {
-  color: white;
   font-family: Poppins, sans-serif;
   margin: auto;
   margin-top: 0.5em;
@@ -32,7 +32,8 @@ div {
   box-shadow: #555555 0.1em 0.1em 0.05em;
 }
 
-.cols:hover {
+.cols:hover,
+#toggle-dark:hover {
   opacity: 0.8;
 }
 
@@ -81,4 +82,30 @@ div {
   box-shadow: #424242 0.1em 0.1em 0.05em;
   background-color: #747474;
   text-align: center;
+  user-select: none;
+}
+
+#toggle-dark {
+  border: none;
+  width: 3em;
+  height: 3em;
+  background-color: #e9e76e;
+  position: absolute;
+  border-radius: 1.25em;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  box-shadow: #6b652b 0.2em 0.2em 0.1em;
+}
+
+#toggle-dark img {
+  scale: 1.5;
+  display: block;
+  margin: auto;
+  margin-top: 0.6em;
+}
+
+#toggle-dark:active {
+  scale: 0.96;
+  box-shadow: #6b652b 0.1em 0.1em 0.05em;
 }
