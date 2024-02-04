@@ -19,6 +19,7 @@ function del() {
 
 function clear() {
   screen.textContent = "0";
+  decimalPresent = false;
 }
 
 function numClick(i) {
