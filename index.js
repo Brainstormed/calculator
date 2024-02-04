@@ -94,7 +94,7 @@ btn[4].addEventListener("click", () => {
   if (screen.textContent != "0" && !isNaN(screen.textContent)) {
     screen.textContent = 1 / screen.textContent;
   } else if (isNaN(screen.textContent)) {
-    ("");
+    null;
   } else {
     errorDialog();
   }
