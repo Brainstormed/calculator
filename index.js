@@ -65,7 +65,10 @@ btn[20].addEventListener("click", () => {
 });
 
 btn[4].addEventListener("click", () => {
-  if (screen.textContent != 0) {
+  if (
+    screen.textContent != "0" &&
+    !screen.textContent[screen.textContent.length - 1 in "/*-+"]
+  ) {
     screen.textContent = 1 / screen.textContent;
   } else {
     errorDialog();
@@ -73,11 +76,15 @@ btn[4].addEventListener("click", () => {
 });
 
 btn[5].addEventListener("click", () => {
-  screen.textContent *= screen.textContent;
+  !screen.textContent[screen.textContent.length - 1 in "/*-+"]
+    ? (screen.textContent *= screen.textContent)
+    : "";
 });
 
 btn[6].addEventListener("click", () => {
-  screen.textContent = Math.pow(screen.textContent, 1 / 2);
+  !screen.textContent[screen.textContent.length - 1 in "/*-+"]
+    ? (screen.textContent = Math.pow(screen.textContent, 1 / 2))
+    : "";
 });
 
 btn[7].addEventListener("click", () => {
@@ -99,19 +106,28 @@ btn[0].addEventListener("click", () => {
 });
 
 btn[11].addEventListener("click", () => {
-  if (screen.textContent[screen.textContent.length - 1] != ".") {
+  if (
+    screen.textContent[screen.textContent.length - 1] != "." &&
+    screen.textContent[screen.textContent.length - 1] != "*"
+  ) {
     screen.textContent += "*";
   }
 });
 
 btn[15].addEventListener("click", () => {
-  if (screen.textContent[screen.textContent.length - 1] != ".") {
+  if (
+    screen.textContent[screen.textContent.length - 1] != "." &&
+    screen.textContent[screen.textContent.length - 1] != "-"
+  ) {
     screen.textContent += "-";
   }
 });
 
 btn[19].addEventListener("click", () => {
-  if (screen.textContent[screen.textContent.length - 1] != ".") {
+  if (
+    screen.textContent[screen.textContent.length - 1] != "." &&
+    screen.textContent[screen.textContent.length - 1] != "+"
+  ) {
     screen.textContent += "+";
   }
 });
