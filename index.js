@@ -172,8 +172,8 @@ btn[23].addEventListener("click", () => {
   if (screen.textContent == "NaN" || screen.textContent == "Infinity") {
     errorDialog();
     screen.textContent = "0";
-    decimalPresent = false;
   }
+  decimalPresent = false;
 });
 
 // Dark mode and light mode styles
