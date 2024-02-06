@@ -69,7 +69,7 @@ btn[3].addEventListener("click", () => {
   if (screen.textContent.length > 1) {
     del();
     if (!screen.textContent.includes(".")) {
-      decimalPresent = false
+      decimalPresent = false;
     }
   } else {
     screen.textContent = "0";
