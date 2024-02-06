@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="A simple javascript calculator">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link
@@ -12,7 +13,9 @@
   </head>
   <body>
     <div id="error"></div>
-    <div id="toggle-dark"><img src="assets/light_mode.svg" /></div>
+    <div id="toggle-dark">
+      <img src="assets/light_mode.svg" alt="Dark Mode Toggle" />
+    </div>
     <div id="screen">0</div>
     <div id="calc-keys">
       <div class="row">
@@ -20,7 +23,7 @@
         <div class="cols clear">CE</div>
         <div class="cols clear">C</div>
         <div class="cols" id="del">
-          <img src="assets/backspace.svg" />
+          <img src="assets/backspace.svg" alt="Delete Button" />
         </div>
       </div>
       <div class="row">
