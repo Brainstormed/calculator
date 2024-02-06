@@ -68,6 +68,9 @@ for (let i = 0; i < clearScreen.length; i++) {
 btn[3].addEventListener("click", () => {
   if (screen.textContent.length > 1) {
     del();
+    if (!screen.textContent.includes(".")) {
+      decimalPresent = false
+    }
   } else {
     screen.textContent = "0";
   }
