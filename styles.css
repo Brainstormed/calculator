@@ -77,7 +77,7 @@ div {
   width: 9em;
   margin: auto;
   opacity: 1;
-  transform: translateY(-5em);
+  transform: translateY(-10em);
   border-radius: 0.2em;
   box-shadow: #424242 0.1em 0.1em 0.05em;
   background-color: #747474;
@@ -113,4 +113,16 @@ div {
 #del {
   background-color: #fa4949;
   box-shadow: 0.1em 0.1em 0.05em #fa4949;
+}
+
+@media (max-height: 820px) {
+  body {
+    transform: scale(0.8) translateY(-6em);
+  }
+}
+
+@media (max-height: 670px) {
+  body {
+    transform: scale(0.6) translateY(-15em);
+  }
 }
