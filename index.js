@@ -162,6 +162,7 @@ btn[19].addEventListener("click", () => {
     screen.textContent[screen.textContent.length - 1] != "+"
   ) {
     screen.textContent += "+";
+    decimalPresent = true;
   }
 });
 
