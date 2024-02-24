@@ -146,6 +146,7 @@ div {
   #calc-keys {
     position: absolute;
     bottom: 1em;
+    justify-self: center;
   }
 }
 
