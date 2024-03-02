@@ -51,6 +51,10 @@ div {
   width: 20em;
   margin: auto;
   border: none;
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #screen {
@@ -69,6 +73,10 @@ div {
   overflow: auto;
   user-select: none;
   word-break: break-all;
+  position: absolute;
+  bottom: 11em;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #error {
@@ -115,7 +123,7 @@ div {
   box-shadow: 0.1em 0.1em 0.05em #fa4949;
 }
 
-@media (max-height: 820px) {
+@media (max-height: 770px) {
   .cols {
     font-size: 2em;
     margin: 0.1em;
