@@ -164,8 +164,9 @@ div {
 }
 
 @media (max-height: 535px) {
-  .cols, #screen {
-    font-size: calc(100vh/20);
+  .cols,
+  #screen {
+    font-size: calc(100vh / 20);
   }
 
   #screen {
