@@ -52,7 +52,7 @@ div {
   margin: auto;
   border: none;
   position: absolute;
-  bottom: 1em;
+  bottom: 3em;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -74,7 +74,7 @@ div {
   user-select: none;
   word-break: break-all;
   position: absolute;
-  bottom: 11em;
+  bottom: 11.5em;
   left: 50%;
   transform: translateX(-50%);
 }
