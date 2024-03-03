@@ -124,9 +124,13 @@ div {
 }
 
 @media (max-height: 770px) {
+  html {
+    overflow-x: hidden;
+  }
+
   .cols {
     font-size: 2em;
-    margin: 0.1em;
+    margin: 0.1em 0.85vw;
     width: calc(85vw / 4);
   }
 
