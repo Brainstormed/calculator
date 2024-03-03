@@ -127,6 +127,7 @@ div {
   .cols {
     font-size: 2em;
     margin: 0.1em;
+    width: calc(85vw / 4);
   }
 
   .row {
@@ -135,7 +136,7 @@ div {
 
   #screen {
     font-size: 2em;
-    width: 6.5em;
+    width: 90vw;
     position: absolute;
     bottom: 11em;
     justify-self: center;
@@ -159,12 +160,16 @@ div {
 }
 
 @media (max-height: 535px) {
-  .cols {
-    font-size: 1.7em;
+  .cols, #screen {
+    font-size: calc(100vh/20);
   }
 
   #screen {
-    font-size: 1.7em;
+    margin-bottom: 6vh;
+  }
+
+  #del img {
+    transform: scale(0.7);
   }
 
   #toggle-dark {
