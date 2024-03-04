@@ -13,6 +13,10 @@ let screen = document.getElementById("screen");
 
 // Functions
 
+function lastCharOf(str) {
+  return str.slice(-1);
+}
+
 function del() {
   screen.textContent = screen.textContent.slice(0, -1);
 }
@@ -67,10 +71,10 @@ for (let i = 0; i < clearScreen.length; i++) {
 
 btn[3].addEventListener("click", () => {
   if (screen.textContent.length > 1) {
-    del();
     if (!screen.textContent.includes(".")) {
       decimalPresent = false;
     }
+    del();
   } else {
     screen.textContent = "0";
   }
@@ -119,7 +123,8 @@ btn[6].addEventListener("click", () => {
 btn[0].addEventListener("click", () => {
   if (
     screen.textContent[screen.textContent.length - 1] != "." &&
-    !screen.textContent.includes("%")
+    !screen.textContent.includes("%") &&
+    !"%/*-+".includes(lastCharOf(screen.textContent))
   ) {
     screen.textContent += "%";
     decimalPresent = false;
@@ -129,7 +134,8 @@ btn[0].addEventListener("click", () => {
 btn[7].addEventListener("click", () => {
   if (
     screen.textContent[screen.textContent.length - 1] != "." &&
-    !screen.textContent.includes("/")
+    !screen.textContent.includes("/") &&
+    !"%/*-+".includes(lastCharOf(screen.textContent))
   ) {
     screen.textContent += "/";
     decimalPresent = false;
@@ -139,7 +145,8 @@ btn[7].addEventListener("click", () => {
 btn[11].addEventListener("click", () => {
   if (
     screen.textContent[screen.textContent.length - 1] != "." &&
-    screen.textContent[screen.textContent.length - 1] != "*"
+    screen.textContent[screen.textContent.length - 1] != "*" &&
+    !"%/*-+".includes(lastCharOf(screen.textContent))
   ) {
     screen.textContent += "*";
     decimalPresent = false;
@@ -149,7 +156,8 @@ btn[11].addEventListener("click", () => {
 btn[15].addEventListener("click", () => {
   if (
     screen.textContent[screen.textContent.length - 1] != "." &&
-    screen.textContent[screen.textContent.length - 1] != "-"
+    screen.textContent[screen.textContent.length - 1] != "-" &&
+    !"%/*-+".includes(lastCharOf(screen.textContent))
   ) {
     screen.textContent += "-";
     decimalPresent = false;
@@ -159,7 +167,8 @@ btn[15].addEventListener("click", () => {
 btn[19].addEventListener("click", () => {
   if (
     screen.textContent[screen.textContent.length - 1] != "." &&
-    screen.textContent[screen.textContent.length - 1] != "+"
+    screen.textContent[screen.textContent.length - 1] != "+" &&
+    !"%/*-+".includes(lastCharOf(screen.textContent))
   ) {
     screen.textContent += "+";
     decimalPresent = false;
@@ -174,7 +183,7 @@ btn[23].addEventListener("click", () => {
     errorDialog();
     screen.textContent = "0";
   }
-  decimalPresent = false;
+  decimalPresent = screen.textContent.includes(".");
 });
 
 // Dark mode and light mode styles
